@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+  <meta charset="UTF-8">
+  <title>ТехноСвят ЕООД - Поръчки</title>
+</head>
+<body>
+
+<table width="100%" border="1" cellpadding="10" cellspacing="0">
+
+  <tr>
+    <td colspan="3">
+      <h1>ТехноСвят ЕООД</h1>
+      <p><i>Технологии за вашия дом и офис</i></p>
+    </td>
+  </tr>
+
+  <tr>
+    <td width="180" valign="top">
+      <h3>Меню</h3>
+      <ul>
+        <li><a href="firma.html">За фирмата</a></li>
+        <li><a href="produkti.html">Продукти</a></li>
+        <li><a href="porachki.html">Поръчки</a></li>
+        <li><a href="mnenia.html">Мнения</a></li>
+        <li><a href="index.html">Работа</a></li>
+      </ul>
+    </td>
+
+    <td valign="top">
+      <h2>Форма за поръчка</h2>
+      <p>Полетата със звездичка (*) са задължителни.</p>
+
+      <form action="#" method="post">
+
+        <fieldset>
+          <legend>Продукт</legend>
+
+          <label for="produkt">Продукт *:</label>
+          <select name="produkt" id="produkt" required>
+            <option value="">-- Изберете продукт --</option>
+            <optgroup label="Телефони">
+              <option value="smartfon">Смартфон</option>
+              <option value="slushalki">Слушалки</option>
+            </optgroup>
+            <optgroup label="Компютри">
+              <option value="laptop">Лаптоп</option>
+              <option value="tablet" selected>Таблет</option>
+              <option value="monitor">Монитор</option>
+            </optgroup>
+          </select>
+          <br><br>
+
+          <label for="broi">Брой продукти *:</label>
+          <input type="number" name="broi" id="broi"
+                 min="1" max="10" value="1" step="1" required>
+          <br><br>
+
+          <label for="cvyat">Цвят:</label>
+          <input type="color" name="cvyat" id="cvyat" value="#000000">
+        </fieldset>
+
+        <br>
+
+        <fieldset>
+          <legend>Данни за купувача</legend>
+
+          <label for="ime">Име *:</label>
+          <input type="text" name="ime" id="ime"
+                 placeholder="Иван Иванов" size="30"
+                 maxlength="50" required autofocus>
+          <br><br>
+
+          <label for="email">Имейл *:</label>
+          <input type="email" name="email" id="email"
+                 placeholder="ivan@example.com" required>
+          <br><br>
+
+          <label for="adres">Адрес *:</label>
+          <input type="text" name="adres" id="adres"
+                 placeholder="гр. София, ул. Витоша 1" size="40"
+                 required>
+          <br><br>
+
+          <label for="parola">Парола за проследяване:</label>
+          <input type="password" name="parola" id="parola"
+                 minlength="6" maxlength="20">
+        </fieldset>
+
+        <br>
+
+        <fieldset>
+          <legend>Доставка и плащане</legend>
+
+          <label for="data">Дата на доставка *:</label>
+          <input type="date" name="data" id="data"
+                 min="2026-10-21" max="2026-12-31" required>
+          <br><br>
+
+          <label for="chas">Предпочитан час:</label>
+          <input type="time" name="chas" id="chas"
+                 min="09:00" max="18:00">
+          <br><br>
+
+          Начин на доставка:<br>
+          <input type="radio" name="dostavka" id="kuriер"
+                 value="kurier" checked>
+          <label for="kuriер">Куриер до адрес</label><br>
+          <input type="radio" name="dostavka" id="ofis" value="ofis">
+          <label for="ofis">До офис на куриер</label><br>
+          <input type="radio" name="dostavka" id="magazin"
+                 value="magazin">
+          <label for="magazin">Вземане от магазин</label>
+          <br><br>
+
+          Допълнителни услуги:<br>
+          <input type="checkbox" name="usluga" id="podarak"
+                 value="podarak">
+          <label for="podarak">Подаръчна опаковка</label><br>
+          <input type="checkbox" name="usluga" id="garancia"
+                 value="garancia" checked>
+          <label for="garancia">Удължена гаранция</label><br>
+          <input type="checkbox" name="usluga" id="montаж"
+                 value="montaj">
+          <label for="montаж">Монтаж и настройка</label>
+        </fieldset>
+
+        <br>
+
+        <fieldset>
+          <legend>Допълнително</legend>
+
+          <label for="telefon">Телефон:</label>
+          <input type="tel" name="telefon" id="telefon"
+                 placeholder="0888123456"
+                 pattern="[0-9]{10}"
+                 title="Въведете 10 цифри">
+          <br><br>
+
+          <label for="belezhka">Бележка към поръчката:</label><br>
+          <textarea name="belezhka" id="belezhka"
+                    rows="4" cols="40"
+                    placeholder="Напишете допълнителни указания..."></textarea>
+          <br><br>
+
+          <input type="hidden" name="istochnik" value="sait">
+
+          <input type="checkbox" name="usloviya" id="usloviya"
+                 required>
+          <label for="usloviya">Съгласен съм с условията *</label>
+        </fieldset>
+
+        <br>
+
+        <input type="submit" value="Изпрати поръчката">
+        <input type="reset" value="Изчисти формата">
+
+      </form>
+    </td>
+
+    <td width="220" valign="top">
+      <h3>Новини</h3>
+      <p><b>20.10.2026</b><br>Нови смартфони на склад!</p>
+      <p><b>15.10.2026</b><br>Отстъпка 10% за зимните поръчки.</p>
+      <p><b>01.10.2026</b><br>Отваряме нов магазин във Варна.</p>
+    </td>
+  </tr>
+
+</table>
+
+</body>
+</html>

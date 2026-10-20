@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+  <meta charset="UTF-8">
+  <title>ТехноСвят ЕООД - Мнения</title>
+</head>
+<body>
+
+<table width="100%" border="1" cellpadding="10" cellspacing="0">
+
+  <tr>
+    <td colspan="3">
+      <h1>ТехноСвят ЕООД</h1>
+      <p><i>Технологии за вашия дом и офис</i></p>
+    </td>
+  </tr>
+
+  <tr>
+    <td width="180" valign="top">
+      <h3>Меню</h3>
+      <ul>
+        <li><a href="firma.html">За фирмата</a></li>
+        <li><a href="produkti.html">Продукти</a></li>
+        <li><a href="porachki.html">Поръчки</a></li>
+        <li><a href="mnenia.html">Мнения</a></li>
+        <li><a href="index.html">Работа</a></li>
+      </ul>
+    </td>
+
+    <td valign="top">
+      <h2>Вашето мнение</h2>
+      <p>Полетата със звездичка (*) са задължителни.</p>
+
+      <form action="#" method="post" enctype="multipart/form-data">
+
+        <fieldset>
+          <legend>За Вас</legend>
+
+          <label for="ime">Име:</label>
+          <input type="text" name="ime" id="ime"
+                 placeholder="Вашето име" maxlength="40"
+                 list="imena">
+          <datalist id="imena">
+            <option value="Анонимен">
+            <option value="Клиент">
+          </datalist>
+          <br><br>
+
+          <label for="mesec">Месец на мнението *:</label>
+          <input type="month" name="mesec" id="mesec"
+                 min="2026-01" max="2026-12" required>
+          <br><br>
+
+          <label for="telefon">Телефон *:</label>
+          <input type="tel" name="telefon" id="telefon"
+                 placeholder="0888123456"
+                 pattern="[0-9]{10}"
+                 title="Въведете 10 цифри"
+                 required>
+          <br><br>
+
+          <label for="sait">Личен сайт:</label>
+          <input type="url" name="sait" id="sait"
+                 placeholder="https://example.com">
+        </fieldset>
+
+        <br>
+
+        <fieldset>
+          <legend>Оценка на продукта</legend>
+
+          <label for="ocenka">Оценка (1 до 10) *:</label>
+          <input type="number" name="ocenka" id="ocenka"
+                 min="1" max="10" step="1" value="5" required>
+          <br><br>
+
+          <label for="cena">Цена на закупения продукт *:</label>
+          <select name="cena" id="cena" required>
+            <option value="">-- Изберете диапазон --</option>
+            <option value="0-100">до 100 лв.</option>
+            <option value="100-300">100 - 300 лв.</option>
+            <option value="300-600">300 - 600 лв.</option>
+            <option value="600-1000">600 - 1000 лв.</option>
+            <option value="1000+">над 1000 лв.</option>
+          </select>
+          <br><br>
+
+          <label for="dovolstvo">Колко сте доволни:</label>
+          <input type="range" name="dovolstvo" id="dovolstvo"
+                 min="0" max="100" step="10" value="50">
+          <br><br>
+
+          Ще препоръчате ли продукта?<br>
+          <input type="radio" name="preporuka" id="da"
+                 value="da" checked>
+          <label for="da">Да</label>
+          <input type="radio" name="preporuka" id="ne" value="ne">
+          <label for="ne">Не</label>
+          <input type="radio" name="preporuka" id="mozhe"
+                 value="mozhe">
+          <label for="mozhe">Може би</label>
+          <br><br>
+
+          Какво Ви хареса?<br>
+          <input type="checkbox" name="haresva" id="kachestvo"
+                 value="kachestvo">
+          <label for="kachestvo">Качество</label><br>
+          <input type="checkbox" name="haresva" id="cena2"
+                 value="cena">
+          <label for="cena2">Цена</label><br>
+          <input type="checkbox" name="haresva" id="dostavka"
+                 value="dostavka">
+          <label for="dostavka">Бърза доставка</label>
+        </fieldset>
+
+        <br>
+
+        <fieldset>
+          <legend>Коментар</legend>
+
+          <label for="komentar">Допълнителни коментари:</label><br>
+          <textarea name="komentar" id="komentar"
+                    rows="5" cols="45" maxlength="500"
+                    placeholder="Напишете Вашето мнение..."></textarea>
+          <br><br>
+
+          <label for="snimka">Снимка на продукта:</label>
+          <input type="file" name="snimka" id="snimka"
+                 accept="image/*">
+          <br><br>
+
+          <label for="email">Имейл за обратна връзка:</label>
+          <input type="email" name="email" id="email"
+                 placeholder="ivan@example.com">
+        </fieldset>
+
+
+        <br>
+
+        <input type="submit" value="Изпрати мнението">
+        <input type="reset" value="Изчисти формата">
+
+      </form>
+    </td>
+
+    <td width="220" valign="top">
+      <h3>Новини</h3>
+      <p><b>20.10.2026</b><br>Нови смартфони на склад!</p>
+      <p><b>15.10.2026</b><br>Отстъпка 10% за зимните поръчки.</p>
+      <p><b>01.10.2026</b><br>Отваряме нов магазин във Варна.</p>
+    </td>
+  </tr>
+
+</table>
+
+</body>
+</html>
