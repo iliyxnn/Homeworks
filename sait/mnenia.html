@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <title>ТехноСвят ЕООД - Мнения</title>
+    <style>
+body{display:grid;grid-template-columns:180px 1fr 220px;gap:10px}
+header{grid-column:1/4;display:flex;align-items:center;gap:15px}
+footer{grid-column:1/4;text-align:center}
+header,nav,main,aside,footer{border:2px solid navy;padding:10px}
+nav li ul{display:none}
+nav li:hover>ul{display:block}
+.galeria{display:flex;flex-wrap:wrap;gap:20px}
+figure{margin:0;text-align:center}
+.galeria img{width:200px;height:200px;object-fit:cover;border:3px solid gray;border-radius:10px;padding:5px}
+    </style>
+</head>
+<body>
+
+<header>
+    <svg width="70" height="70" viewBox="0 0 100 100" role="img" aria-label="Лого на ТехноСвят">
+        <circle cx="50" cy="50" r="46" fill="navy"/>
+        <ellipse cx="50" cy="50" rx="46" ry="18" fill="none" stroke="orange" stroke-width="4" transform="rotate(-25 50 50)"/>
+        <rect x="26" y="28" width="48" height="12" fill="white"/>
+        <rect x="44" y="28" width="12" height="44" fill="white"/>
+    </svg>
+    <div>
+        <h1>ТехноСвят ЕООД</h1>
+        <p><i>Технологии за вашия дом и офис</i></p>
+    </div>
+</header>
+
+<nav>
+    <h3>Меню</h3>
+    <ul>
+        <li><a href="firma.html">За фирмата</a>
+            <ul>
+                <li><a href="partnori.html">Партньори</a></li>
+                <li><a href="razvitie.html">Развитие</a></li>
+            </ul>
+        </li>
+        <li><a href="produkti.html">Продукти</a></li>
+        <li><a href="porachki.html">Поръчки</a></li>
+        <li><a href="mnenia.html">Мнения</a></li>
+        <li><a href="index.html">Работа</a></li>
+        <li><a href="#">За собственика</a>
+            <ul>
+                <li><a href="film.html">Филм</a></li>
+                <li><a href="muzika.html">Музика</a></li>
+                <li><a href="klip.html">Клип</a></li>
+            </ul>
+        </li>
+    </ul>
+</nav>
+
+<main>
+    <h2>Вашето мнение</h2>
+    <p>Полетата със звездичка (*) са задължителни.</p>
+    <form action="#" method="post" enctype="multipart/form-data">
+        <fieldset>
+            <legend>За Вас</legend>
+            <p><label>Име: <input type="text" name="ime" placeholder="Вашето име" maxlength="40" list="imena"></label>
+                <datalist id="imena"><option value="Анонимен"><option value="Клиент"></datalist></p>
+            <p><label>Месец на мнението *: <input type="month" name="mesec" min="2026-01" max="2026-12" required></label></p>
+            <p><label>Телефон *: <input type="tel" name="telefon" placeholder="0888123456" pattern="[0-9]{10}" title="Въведете 10 цифри" required></label></p>
+            <p><label>Личен сайт: <input type="url" name="sait" placeholder="https://example.com"></label></p>
+            <p><label>Имейл: <input type="email" name="email" placeholder="ivan@example.com"></label></p>
+        </fieldset>
+        <fieldset>
+            <legend>Оценка на продукта</legend>
+            <p><label>Оценка (1 до 10) *: <input type="number" name="ocenka" min="1" max="10" step="1" value="5" required></label></p>
+            <p><label>Цена на закупения продукт *:
+                <select name="cena" required>
+                    <option value="">-- Изберете диапазон --</option>
+                    <option value="0-100">до 100 лв.</option>
+                    <option value="100-300">100 - 300 лв.</option>
+                    <option value="300-600">300 - 600 лв.</option>
+                    <option value="600-1000">600 - 1000 лв.</option>
+                    <option value="1000+">над 1000 лв.</option>
+                </select></label></p>
+            <p><label>Колко сте доволни: <input type="range" name="dovolstvo" min="0" max="100" step="10" value="50"></label></p>
+            <p>Ще препоръчате ли продукта?<br>
+                <label><input type="radio" name="preporuka" value="da" checked> Да</label>
+                <label><input type="radio" name="preporuka" value="ne"> Не</label>
+                <label><input type="radio" name="preporuka" value="mozhe"> Може би</label></p>
+            <p>Какво Ви хареса?<br>
+                <label><input type="checkbox" name="haresva" value="kachestvo"> Качество</label><br>
+                <label><input type="checkbox" name="haresva" value="cena"> Цена</label><br>
+                <label><input type="checkbox" name="haresva" value="dostavka"> Бърза доставка</label></p>
+        </fieldset>
+        <fieldset>
+            <legend>Коментар</legend>
+            <p><label>Допълнителни коментари:<br><textarea name="komentar" rows="5" cols="45" maxlength="500" placeholder="Напишете Вашето мнение..."></textarea></label></p>
+            <p><label>Снимка на продукта: <input type="file" name="snimka" accept="image/*"></label></p>
+        </fieldset>
+        <p><input type="submit" value="Изпрати мнението"> <input type="reset" value="Изчисти формата"></p>
+    </form>
+</main>
+
+<aside>
+    <h3>Новини</h3>
+    <article><h4><time datetime="2026-10-20">20.10.2026</time></h4><p>Нови смартфони на склад!</p></article>
+    <article><h4><time datetime="2026-10-15">15.10.2026</time></h4><p>Отстъпка 10% за есенните поръчки.</p></article>
+    <article><h4><time datetime="2026-10-01">01.10.2026</time></h4><p>Отваряме нов магазин във Варна.</p></article>
+</aside>
+
+<footer>
+    <p>&copy; 2026 ТехноСвят ЕООД. Всички права запазени.</p>
+</footer>
+
+</body>
+</html>

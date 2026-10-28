@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <title>ТехноСвят ЕООД - За фирмата</title>
+    <style>
+body{display:grid;grid-template-columns:180px 1fr 220px;gap:10px}
+header{grid-column:1/4;display:flex;align-items:center;gap:15px}
+footer{grid-column:1/4;text-align:center}
+header,nav,main,aside,footer{border:2px solid navy;padding:10px}
+nav li ul{display:none}
+nav li:hover>ul{display:block}
+.galeria{display:flex;flex-wrap:wrap;gap:20px}
+figure{margin:0;text-align:center}
+.galeria img{width:200px;height:200px;object-fit:cover;border:3px solid gray;border-radius:10px;padding:5px}
+    </style>
+</head>
+<body>
+
+<header>
+    <svg width="70" height="70" viewBox="0 0 100 100" role="img" aria-label="Лого на ТехноСвят">
+        <circle cx="50" cy="50" r="46" fill="navy"/>
+        <ellipse cx="50" cy="50" rx="46" ry="18" fill="none" stroke="orange" stroke-width="4" transform="rotate(-25 50 50)"/>
+        <rect x="26" y="28" width="48" height="12" fill="white"/>
+        <rect x="44" y="28" width="12" height="44" fill="white"/>
+    </svg>
+    <div>
+        <h1>ТехноСвят ЕООД</h1>
+        <p><i>Технологии за вашия дом и офис</i></p>
+    </div>
+</header>
+
+<nav>
+    <h3>Меню</h3>
+    <ul>
+        <li><a href="firma.html">За фирмата</a>
+            <ul>
+                <li><a href="partnori.html">Партньори</a></li>
+                <li><a href="razvitie.html">Развитие</a></li>
+            </ul>
+        </li>
+        <li><a href="produkti.html">Продукти</a></li>
+        <li><a href="porachki.html">Поръчки</a></li>
+        <li><a href="mnenia.html">Мнения</a></li>
+        <li><a href="index.html">Работа</a></li>
+        <li><a href="#">За собственика</a>
+            <ul>
+                <li><a href="film.html">Филм</a></li>
+                <li><a href="muzika.html">Музика</a></li>
+                <li><a href="klip.html">Клип</a></li>
+            </ul>
+        </li>
+    </ul>
+</nav>
+
+<main>
+    <h2>За фирмата</h2>
+    <section>
+        <p><b>ТехноСвят ЕООД</b> е основана през 2010 година в София. Предлагаме <i>качествена електроника</i> на достъпни цени.</p>
+        <p>Нашите ценности:</p>
+        <ul>
+            <li>Качество</li>
+            <li>Бърза доставка</li>
+            <li>Грижа за клиента</li>
+        </ul>
+    </section>
+</main>
+
+<aside>
+    <h3>Новини</h3>
+    <article><h4><time datetime="2026-10-20">20.10.2026</time></h4><p>Нови смартфони на склад!</p></article>
+    <article><h4><time datetime="2026-10-15">15.10.2026</time></h4><p>Отстъпка 10% за есенните поръчки.</p></article>
+    <article><h4><time datetime="2026-10-01">01.10.2026</time></h4><p>Отваряме нов магазин във Варна.</p></article>
+</aside>
+
+<footer>
+    <p>&copy; 2026 ТехноСвят ЕООД. Всички права запазени.</p>
+</footer>
+
+</body>
+</html>

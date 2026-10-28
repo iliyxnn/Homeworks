@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <title>ТехноСвят ЕООД - Поръчки</title>
+    <style>
+body{display:grid;grid-template-columns:180px 1fr 220px;gap:10px}
+header{grid-column:1/4;display:flex;align-items:center;gap:15px}
+footer{grid-column:1/4;text-align:center}
+header,nav,main,aside,footer{border:2px solid navy;padding:10px}
+nav li ul{display:none}
+nav li:hover>ul{display:block}
+.galeria{display:flex;flex-wrap:wrap;gap:20px}
+figure{margin:0;text-align:center}
+.galeria img{width:200px;height:200px;object-fit:cover;border:3px solid gray;border-radius:10px;padding:5px}
+    </style>
+</head>
+<body>
+
+<header>
+    <svg width="70" height="70" viewBox="0 0 100 100" role="img" aria-label="Лого на ТехноСвят">
+        <circle cx="50" cy="50" r="46" fill="navy"/>
+        <ellipse cx="50" cy="50" rx="46" ry="18" fill="none" stroke="orange" stroke-width="4" transform="rotate(-25 50 50)"/>
+        <rect x="26" y="28" width="48" height="12" fill="white"/>
+        <rect x="44" y="28" width="12" height="44" fill="white"/>
+    </svg>
+    <div>
+        <h1>ТехноСвят ЕООД</h1>
+        <p><i>Технологии за вашия дом и офис</i></p>
+    </div>
+</header>
+
+<nav>
+    <h3>Меню</h3>
+    <ul>
+        <li><a href="firma.html">За фирмата</a>
+            <ul>
+                <li><a href="partnori.html">Партньори</a></li>
+                <li><a href="razvitie.html">Развитие</a></li>
+            </ul>
+        </li>
+        <li><a href="produkti.html">Продукти</a></li>
+        <li><a href="porachki.html">Поръчки</a></li>
+        <li><a href="mnenia.html">Мнения</a></li>
+        <li><a href="index.html">Работа</a></li>
+        <li><a href="#">За собственика</a>
+            <ul>
+                <li><a href="film.html">Филм</a></li>
+                <li><a href="muzika.html">Музика</a></li>
+                <li><a href="klip.html">Клип</a></li>
+            </ul>
+        </li>
+    </ul>
+</nav>
+
+<main>
+    <h2>Форма за поръчка</h2>
+    <p>Полетата със звездичка (*) са задължителни.</p>
+    <form action="#" method="post">
+        <fieldset>
+            <legend>Продукт</legend>
+            <p><label>Продукт *:
+                <select name="produkt" required>
+                    <option value="">-- Изберете продукт --</option>
+                    <optgroup label="Телефони">
+                        <option value="smartfon">Смартфон</option>
+                        <option value="slushalki">Слушалки</option>
+                    </optgroup>
+                    <optgroup label="Компютри">
+                        <option value="laptop">Лаптоп</option>
+                        <option value="tablet" selected>Таблет</option>
+                        <option value="monitor">Монитор</option>
+                    </optgroup>
+                </select></label></p>
+            <p><label>Брой *: <input type="number" name="broi" min="1" max="10" step="1" value="1" required></label></p>
+            <p><label>Цвят: <input type="color" name="cvyat" value="#000000"></label></p>
+        </fieldset>
+        <fieldset>
+            <legend>Данни за купувача</legend>
+            <p><label>Име *: <input type="text" name="ime" placeholder="Иван Иванов" size="30" maxlength="50" required autofocus></label></p>
+            <p><label>Имейл *: <input type="email" name="email" placeholder="ivan@example.com" required></label></p>
+            <p><label>Адрес *: <input type="text" name="adres" size="40" placeholder="гр. София, ул. Витоша 1" required></label></p>
+            <p><label>Телефон: <input type="tel" name="telefon" placeholder="0888123456" pattern="[0-9]{10}" title="Въведете 10 цифри"></label></p>
+            <p><label>Парола за проследяване: <input type="password" name="parola" minlength="6" maxlength="20"></label></p>
+        </fieldset>
+        <fieldset>
+            <legend>Доставка и плащане</legend>
+            <p><label>Дата на доставка *: <input type="date" name="data" min="2026-10-29" max="2026-12-31" required></label></p>
+            <p><label>Предпочитан час: <input type="time" name="chas" min="09:00" max="18:00"></label></p>
+            <p>Начин на доставка:<br>
+                <label><input type="radio" name="dostavka" value="kurier" checked> Куриер до адрес</label><br>
+                <label><input type="radio" name="dostavka" value="ofis"> До офис на куриер</label><br>
+                <label><input type="radio" name="dostavka" value="magazin"> Вземане от магазин</label></p>
+            <p>Допълнителни услуги:<br>
+                <label><input type="checkbox" name="usluga" value="podarak"> Подаръчна опаковка</label><br>
+                <label><input type="checkbox" name="usluga" value="garancia" checked> Удължена гаранция</label><br>
+                <label><input type="checkbox" name="usluga" value="montaj"> Монтаж и настройка</label></p>
+        </fieldset>
+        <fieldset>
+            <legend>Допълнително</legend>
+            <p><label>Бележка:<br><textarea name="belezhka" rows="4" cols="40" placeholder="Допълнителни указания..."></textarea></label></p>
+            <input type="hidden" name="istochnik" value="sait">
+            <p><label><input type="checkbox" name="usloviya" required> Съгласен съм с условията *</label></p>
+        </fieldset>
+        <p><input type="submit" value="Изпрати поръчката"> <input type="reset" value="Изчисти формата"></p>
+    </form>
+</main>
+
+<aside>
+    <h3>Новини</h3>
+    <article><h4><time datetime="2026-10-20">20.10.2026</time></h4><p>Нови смартфони на склад!</p></article>
+    <article><h4><time datetime="2026-10-15">15.10.2026</time></h4><p>Отстъпка 10% за есенните поръчки.</p></article>
+    <article><h4><time datetime="2026-10-01">01.10.2026</time></h4><p>Отваряме нов магазин във Варна.</p></article>
+</aside>
+
+<footer>
+    <p>&copy; 2026 ТехноСвят ЕООД. Всички права запазени.</p>
+</footer>
+
+</body>
+</html>
