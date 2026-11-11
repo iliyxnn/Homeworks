@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <title>ТехноСвят ЕООД - Продукти</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <svg width="70" height="70" viewBox="0 0 100 100" role="img" aria-label="Лого на ТехноСвят">
+        <circle cx="50" cy="50" r="46" fill="navy"/>
+        <ellipse cx="50" cy="50" rx="46" ry="18" fill="none" stroke="orange" stroke-width="4" transform="rotate(-25 50 50)"/>
+        <rect x="26" y="28" width="48" height="12" fill="white"/>
+        <rect x="44" y="28" width="12" height="44" fill="white"/>
+    </svg>
+    <div>
+        <h1>ТехноСвят ЕООД</h1>
+        <p><i>Технологии за вашия дом и офис</i></p>
+    </div>
+</header>
+
+<nav class="horizontalno">
+    <ul>
+        <li><a href="firma.html">За фирмата</a>
+            <ul>
+                <li><a href="partnori.html">Партньори</a></li>
+                <li><a href="razvitie.html">Развитие</a></li>
+            </ul>
+        </li>
+        <li><a href="produkti.html">Продукти</a></li>
+        <li><a href="porachki.html">Поръчки</a></li>
+        <li><a href="mnenia.html">Мнения</a></li>
+        <li><a href="index.html">Работа</a></li>
+        <li><a href="#">За собственика</a>
+            <ul>
+                <li><a href="film.html">Филм</a></li>
+                <li><a href="muzika.html">Музика</a></li>
+                <li><a href="klip.html">Клип</a></li>
+            </ul>
+        </li>
+    </ul>
+</nav>
+
+<div class="teloto">
+    <nav class="vertikalno">
+        <h3>Категории</h3>
+        <ul>
+            <li><a href="produkti.html">Всички продукти</a></li>
+            <li><a href="produkti.html#smartfon">Смартфони</a></li>
+            <li><a href="produkti.html#slushalki">Слушалки</a></li>
+            <li><a href="produkti.html#laptop">Лаптопи</a></li>
+            <li><a href="produkti.html#tablet">Таблети</a></li>
+            <li><a href="produkti.html#monitor">Монитори</a></li>
+        </ul>
+    </nav>
+
+<main>
+    <h2>Продукти</h2>
+    <p>Задръжте мишката върху продукт, за да видите повече информация.</p>
+    <section class="galeria">
+        <figure id="smartfon">
+            <span class="nov">НОВО</span>
+            <span class="cena">499 лв.</span>
+            <img src="smartfon.webp" alt="Смартфон">
+            <div class="opisanie">6.5 инча, 128 GB</div>
+            <figcaption>Смартфон</figcaption>
+        </figure>
+        <figure id="slushalki">
+            <span class="cena">189 лв.</span>
+            <img src="slushalki.webp" alt="Слушалки">
+            <div class="opisanie">Безжични, шумопотискане</div>
+            <figcaption>Слушалки</figcaption>
+        </figure>
+        <figure id="laptop">
+            <span class="cena">1299 лв.</span>
+            <img src="laptop.jpg" alt="Лаптоп">
+            <div class="opisanie">16 GB RAM, SSD 512 GB</div>
+            <figcaption>Лаптоп</figcaption>
+        </figure>
+        <figure id="tablet">
+            <span class="nov">НОВО</span>
+            <span class="cena">249 лв.</span>
+            <img src="tablet.webp" alt="Таблет">
+            <div class="opisanie">10 инча, 32 GB</div>
+            <figcaption>Таблет</figcaption>
+        </figure>
+        <figure id="monitor">
+            <span class="cena">329 лв.</span>
+            <img src="monitor.png" alt="Монитор">
+            <div class="opisanie">27 инча, Full HD</div>
+            <figcaption>Монитор</figcaption>
+        </figure>
+    </section>
+</main>
+
+<aside class="novini">
+    <h3>Новини</h3>
+    <article><h4><time datetime="2026-10-20">20.10.2026</time></h4><p>Нови смартфони на склад!</p></article>
+    <article><h4><time datetime="2026-10-15">15.10.2026</time></h4><p>Отстъпка 10% за есенните поръчки.</p></article>
+    <article><h4><time datetime="2026-10-01">01.10.2026</time></h4><p>Отваряме нов магазин във Варна.</p></article>
+</aside>
+</div>
+
+<footer>
+    <p>&copy; 2026 ТехноСвят ЕООД. Всички права запазени.</p>
+</footer>
+
+<div class="reklama" id="reklama">
+    <button class="zatvori" onclick="document.getElementById('reklama').style.visibility='hidden'" title="Затвори">&times;</button>
+    <h4>РЕКЛАМА</h4>
+    <p><b>-20%</b> на всички лаптопи до края на месеца!</p>
+    <a href="produkti.html#laptop">Виж офертата</a>
+</div>
+</body>
+</html>

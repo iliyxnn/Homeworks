@@ -1,0 +1,103 @@
+/* ===== Външен CSS за Задание 1 (index.html и kvalifikacii.html) ===== */
+
+/* ---------- Фон: наслагване на няколко изображения ---------- */
+body {
+    background-color: #fdf6e3;
+    background-image:
+        url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='40'%20height='40'%3E%3Ccircle%20cx='20'%20cy='20'%20r='4'%20fill='orange'%20fill-opacity='0.35'/%3E%3C/svg%3E"),
+        url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='60'%20height='60'%3E%3Cpath%20d='M0%2060%20L60%200'%20stroke='navy'%20stroke-opacity='0.12'%20stroke-width='3'/%3E%3C/svg%3E"),
+        linear-gradient(135deg, #fdf6e3, #cfe8f7);
+    background-repeat: repeat, repeat, no-repeat;
+    background-size: 40px 40px, 60px 60px, cover;
+    background-position: top left, top left, center;
+    background-attachment: scroll, scroll, fixed;
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 16px;
+    color: #222222;
+    line-height: 1.6;
+    margin: 20px;
+}
+
+/* ---------- Текст ---------- */
+h1 {
+    font-family: Georgia, serif;
+    font-size: 36px;
+    color: navy;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.35);
+    border-bottom: 4px double navy;
+    padding-bottom: 8px;
+}
+
+h2 { font-variant: small-caps; color: darkgreen; text-align: center; letter-spacing: 2px; }
+h3 { color: #b34700; text-decoration: underline; text-decoration-style: dotted; }
+
+p { text-align: justify; text-indent: 15px; word-spacing: 2px; }
+
+b { color: crimson; }
+i { color: darkgreen; }
+u { text-decoration-color: orange; text-decoration-thickness: 3px; }
+
+/* ---------- Списъци ---------- */
+ul { list-style-type: square; color: navy; }
+ol { list-style-type: upper-roman; color: darkgreen; }
+li { margin-bottom: 5px; padding-left: 6px; }
+li::marker { color: darkorange; font-weight: bold; }
+
+/* ---------- Снимка с рамка и сянка ---------- */
+img {
+    border: 8px solid white;
+    outline: 3px solid navy;
+    border-radius: 6px;
+    box-shadow: 10px 10px 18px rgba(0, 0, 0, 0.55);
+}
+
+/* ---------- Таблица: всеки ред в различен цвят ---------- */
+table.kval {
+    border-collapse: collapse;
+    width: 70%;
+    margin: 20px auto;
+    text-align: center;
+    box-shadow: 5px 5px 12px rgba(0, 0, 0, 0.4);
+}
+
+table.kval th, table.kval td {
+    border: 2px solid navy;
+    padding: 12px;
+    vertical-align: middle;
+}
+
+table.kval tr:nth-child(1) { background-color: #b3d4ff; color: navy; font-size: 18px; }
+table.kval tr:nth-child(2) { background-color: #c8f0c8; color: darkgreen; }
+table.kval tr:nth-child(3) { background-color: #fff2b3; color: #663300; font-style: italic; }
+
+table.kval tr:hover { background-color: #ffd1d1; }
+
+/* ---------- Хипервръзки: 4 различни състояния ---------- */
+a:link {
+    color: navy;
+    text-decoration: none;
+    border-bottom: 2px solid navy;
+}
+
+a:visited {
+    color: purple;
+    text-decoration: line-through;
+    font-style: italic;
+}
+
+a:hover {
+    color: white;
+    background-color: darkorange;
+    text-decoration: none;
+    padding: 3px 8px;
+    border-radius: 5px;
+}
+
+a:active {
+    color: red;
+    background-color: yellow;
+    font-weight: bold;
+    text-decoration: underline overline;
+}
