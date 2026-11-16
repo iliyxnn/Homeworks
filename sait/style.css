@@ -332,3 +332,191 @@ input[type="submit"]:hover, input[type="reset"]:hover, button:hover { background
 
 /* ---------- Платно, видео, рамки ---------- */
 canvas, video, iframe { max-width: 100%; border: 2px solid navy; border-radius: 6px; }
+
+/* ================= ЗАДАНИЕ 6 ================= */
+
+/* ---------- Лента "ПРОМОЦИЯ" в ъгъла (трансформации) ---------- */
+.galeria .lenta {
+    position: absolute;
+    top: 24px;
+    left: -40px;
+    z-index: 3;
+    width: 150px;
+    padding: 3px 0;
+    text-align: center;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: white;
+    background-color: rgba(220, 20, 60, 0.95);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    transform: rotate(-45deg);
+    transition: transform 0.3s;
+}
+
+.galeria figure:hover .lenta { transform: rotate(-45deg) scale(1.15); }
+
+/* ---------- Знаме на ЕС ---------- */
+.eu-scena {
+    position: relative;
+    overflow: hidden;
+    height: 340px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 51, 153, 0.08);
+    border: 2px dashed navy;
+    border-radius: 10px;
+}
+
+.eu-zname {
+    position: relative;
+    width: 270px;
+    height: 180px;
+    background-color: #003399;
+    border: 3px solid white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+/* 12 звезди в кръг: rotate + translate, после обратно завъртане, за да стоят изправени */
+.zvezda {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 30px;
+    height: 30px;
+    margin: -15px 0 0 -15px;
+    text-align: center;
+    line-height: 30px;
+    font-size: 28px;
+    color: #ffcc00;
+    transform: rotate(var(--a)) translateY(-62px) rotate(calc(-1 * var(--a)));
+    animation: otlitane 6s ease-in infinite;
+}
+
+.zvezda::before {
+    content: "\2605";
+    display: block;
+    animation: vrtene 6s ease-in infinite;
+}
+
+/* звездите отлитат към краищата и се връщат на мястото си */
+@keyframes otlitane {
+    0%, 20% { translate: 0 0; opacity: 1; }
+    70%     { translate: var(--x) var(--y); opacity: 0; }
+    71%     { translate: 0 0; opacity: 0; }
+    100%    { translate: 0 0; opacity: 1; }
+}
+
+@keyframes vrtene {
+    0%, 20% { transform: rotate(0deg); }
+    70%     { transform: rotate(720deg); }
+    100%    { transform: rotate(0deg); }
+}
+
+.eu-scena:hover .zvezda,
+.eu-scena:hover .zvezda::before { animation-play-state: paused; }
+
+/* ================= ГАЛЕРИЯ: ПРОЗОРЕЦ С ГОЛЯМА СНИМКА (само с CSS, чрез :target) ================= */
+.galeria .opisanie { pointer-events: none; }
+
+.galeria figure a { text-decoration: none; }
+.galeria img { cursor: pointer; }
+.galeria .poveche { color: navy; }
+.galeria .poveche:hover { color: darkorange; text-decoration: underline; }
+
+.modal {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    z-index: 200;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.8);
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.4s, visibility 0.4s;
+}
+
+.modal:target { visibility: visible; opacity: 1; }
+
+/* ширмата зад прозореца: клик върху нея затваря прозореца */
+.modal .fon { position: absolute; top: 0; left: 0; width: 100%; height: 100%; cursor: default; }
+
+.modal .kutiya {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    gap: 25px;
+    width: 900px;
+    max-width: 85vw;
+    max-height: 88vh;
+    overflow: auto;
+    padding: 25px;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.8);
+    transform: scale(0.8);
+    transition: transform 0.4s;
+}
+
+.modal:target .kutiya { transform: scale(1); }
+
+.modal .snimka {
+    flex: 0 0 45%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f2f5fa;
+    border-radius: 8px;
+}
+
+.modal .snimka img { max-width: 100%; max-height: 65vh; object-fit: contain; }
+
+.modal .info { flex: 1; }
+.modal .info h3 { margin-top: 0; color: navy; font-size: 24px; }
+.modal .info p { text-align: left; text-indent: 0; }
+.modal .info ul { list-style-type: square; color: navy; padding-left: 20px; }
+.modal .info li { margin-bottom: 5px; color: #222222; }
+
+.modal .cena-golyama { font-size: 28px; font-weight: bold; color: darkorange; margin: 5px 0; }
+.modal .belezhka { font-size: 12px; color: gray; font-style: italic; }
+
+.modal .poruchai {
+    display: inline-block;
+    padding: 10px 25px;
+    background-color: darkorange;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 6px;
+}
+.modal .poruchai:hover { background-color: navy; }
+
+.modal .zatvori-link {
+    position: absolute;
+    top: 5px;
+    right: 14px;
+    font-size: 34px;
+    line-height: 1;
+    color: #333333;
+    text-decoration: none;
+}
+.modal .zatvori-link:hover { color: crimson; }
+
+/* стрелки за предишен/следващ продукт */
+.modal .strelka {
+    position: absolute;
+    top: 50%;
+    z-index: 2;
+    padding: 10px 14px;
+    font-size: 32px;
+    color: white;
+    text-decoration: none;
+    background-color: rgba(255, 255, 255, 0.15);
+    border-radius: 8px;
+    transform: translateY(-50%);
+}
+.modal .strelka:hover { background-color: rgba(255, 140, 0, 0.8); }
+.modal .levo { left: 15px; }
+.modal .dyasno { right: 15px; }

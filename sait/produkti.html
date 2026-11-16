@@ -57,39 +57,42 @@
 
 <main>
     <h2>Продукти</h2>
-    <p>Задръжте мишката върху продукт, за да видите повече информация.</p>
-    <section class="galeria">
+    <p>Кликнете върху продукт, за да го видите в голям размер и да прочетете повече за него.</p>
+    <section class="galeria" id="galeria">
         <figure id="smartfon">
             <span class="nov">НОВО</span>
             <span class="cena">499 лв.</span>
-            <img src="smartfon.webp" alt="Смартфон">
-            <div class="opisanie">6.5 инча, 128 GB</div>
-            <figcaption>Смартфон</figcaption>
+            <a href="#modal-smartfon"><img src="smartfon.webp" alt="Смартфон"></a>
+            <div class="opisanie">Сгъваем екран, 256 GB</div>
+            <figcaption><a class="poveche" href="#modal-smartfon">Смартфон - повече</a></figcaption>
         </figure>
         <figure id="slushalki">
+            <span class="lenta">ПРОМОЦИЯ</span>
             <span class="cena">189 лв.</span>
-            <img src="slushalki.webp" alt="Слушалки">
-            <div class="opisanie">Безжични, шумопотискане</div>
-            <figcaption>Слушалки</figcaption>
+            <a href="#modal-slushalki"><img src="slushalki.webp" alt="Слушалки"></a>
+            <div class="opisanie">Безжични, отворен тип</div>
+            <figcaption><a class="poveche" href="#modal-slushalki">Слушалки - повече</a></figcaption>
         </figure>
         <figure id="laptop">
+            <span class="lenta">ПРОМОЦИЯ</span>
             <span class="cena">1299 лв.</span>
-            <img src="laptop.jpg" alt="Лаптоп">
+            <a href="#modal-laptop"><img src="laptop.jpg" alt="Лаптоп"></a>
             <div class="opisanie">16 GB RAM, SSD 512 GB</div>
-            <figcaption>Лаптоп</figcaption>
+            <figcaption><a class="poveche" href="#modal-laptop">Лаптоп - повече</a></figcaption>
         </figure>
         <figure id="tablet">
             <span class="nov">НОВО</span>
             <span class="cena">249 лв.</span>
-            <img src="tablet.webp" alt="Таблет">
+            <a href="#modal-tablet"><img src="tablet.webp" alt="Таблет"></a>
             <div class="opisanie">10 инча, 32 GB</div>
-            <figcaption>Таблет</figcaption>
+            <figcaption><a class="poveche" href="#modal-tablet">Таблет - повече</a></figcaption>
         </figure>
         <figure id="monitor">
+            <span class="lenta">ПРОМОЦИЯ</span>
             <span class="cena">329 лв.</span>
-            <img src="monitor.png" alt="Монитор">
+            <a href="#modal-monitor"><img src="monitor.png" alt="Монитор"></a>
             <div class="opisanie">27 инча, Full HD</div>
-            <figcaption>Монитор</figcaption>
+            <figcaption><a class="poveche" href="#modal-monitor">Монитор - повече</a></figcaption>
         </figure>
     </section>
 </main>
@@ -100,6 +103,122 @@
     <article><h4><time datetime="2026-10-15">15.10.2026</time></h4><p>Отстъпка 10% за есенните поръчки.</p></article>
     <article><h4><time datetime="2026-10-01">01.10.2026</time></h4><p>Отваряме нов магазин във Варна.</p></article>
 </aside>
+</div>
+
+<div class="modal" id="modal-smartfon" role="dialog" aria-label="Samsung Galaxy Z Fold8">
+    <a class="fon" href="#galeria" title="Затвори"></a>
+    <a class="strelka levo" href="#modal-monitor" title="Предишен">&#10094;</a>
+    <a class="strelka dyasno" href="#modal-slushalki" title="Следващ">&#10095;</a>
+    <div class="kutiya">
+        <a class="zatvori-link" href="#galeria" title="Затвори">&times;</a>
+        <div class="snimka"><img src="smartfon.webp" alt="Смартфон"></div>
+        <div class="info">
+            <h3>Samsung Galaxy Z Fold8</h3>
+            <p class="cena-golyama">499 лв.</p>
+            <p>Сгъваем смартфон с Galaxy AI. Отворен е като малък таблет, а сгънат се побира в джоба.</p>
+            <ul>
+                <li><b>Тип:</b> Сгъваем смартфон</li>
+                <li><b>Памет:</b> 256 GB</li>
+                <li><b>Камера:</b> Двойна задна камера</li>
+                <li><b>Цвят:</b> Лилав</li>
+                <li><b>Гаранция:</b> 24 месеца</li>
+            </ul>
+
+            <p><a class="poruchai" href="porachki.html">Поръчай</a></p>
+        </div>
+    </div>
+</div>
+<div class="modal" id="modal-slushalki" role="dialog" aria-label="Lenovo безжични слушалки">
+    <a class="fon" href="#galeria" title="Затвори"></a>
+    <a class="strelka levo" href="#modal-smartfon" title="Предишен">&#10094;</a>
+    <a class="strelka dyasno" href="#modal-laptop" title="Следващ">&#10095;</a>
+    <div class="kutiya">
+        <a class="zatvori-link" href="#galeria" title="Затвори">&times;</a>
+        <div class="snimka"><img src="slushalki.webp" alt="Слушалки"></div>
+        <div class="info">
+            <h3>Lenovo безжични слушалки</h3>
+            <p class="cena-golyama">189 лв.</p>
+            <p>Безжични слушалки със закачане зад ухото. Оставят ушите отворени, затова чувате и околните звуци.</p>
+            <ul>
+                <li><b>Тип:</b> Безжични, с отворен тип</li>
+                <li><b>Връзка:</b> Bluetooth</li>
+                <li><b>Зареждане:</b> Кутия за зареждане</li>
+                <li><b>Цвят:</b> Лилав</li>
+                <li><b>Гаранция:</b> 24 месеца</li>
+            </ul>
+
+            <p><a class="poruchai" href="porachki.html">Поръчай</a></p>
+        </div>
+    </div>
+</div>
+<div class="modal" id="modal-laptop" role="dialog" aria-label="Lenovo LOQ">
+    <a class="fon" href="#galeria" title="Затвори"></a>
+    <a class="strelka levo" href="#modal-slushalki" title="Предишен">&#10094;</a>
+    <a class="strelka dyasno" href="#modal-tablet" title="Следващ">&#10095;</a>
+    <div class="kutiya">
+        <a class="zatvori-link" href="#galeria" title="Затвори">&times;</a>
+        <div class="snimka"><img src="laptop.jpg" alt="Лаптоп"></div>
+        <div class="info">
+            <h3>Lenovo LOQ</h3>
+            <p class="cena-golyama">1299 лв.</p>
+            <p>Лаптоп с процесор AMD Ryzen. Подходящ за работа, учене и игри.</p>
+            <ul>
+                <li><b>Процесор:</b> AMD Ryzen</li>
+                <li><b>Памет:</b> 16 GB RAM</li>
+                <li><b>Диск:</b> SSD 512 GB</li>
+                <li><b>Екран:</b> 15.6 инча</li>
+                <li><b>Гаранция:</b> 24 месеца</li>
+            </ul>
+
+            <p><a class="poruchai" href="porachki.html">Поръчай</a></p>
+        </div>
+    </div>
+</div>
+<div class="modal" id="modal-tablet" role="dialog" aria-label="Samsung таблет">
+    <a class="fon" href="#galeria" title="Затвори"></a>
+    <a class="strelka levo" href="#modal-laptop" title="Предишен">&#10094;</a>
+    <a class="strelka dyasno" href="#modal-monitor" title="Следващ">&#10095;</a>
+    <div class="kutiya">
+        <a class="zatvori-link" href="#galeria" title="Затвори">&times;</a>
+        <div class="snimka"><img src="tablet.webp" alt="Таблет"></div>
+        <div class="info">
+            <h3>Samsung таблет</h3>
+            <p class="cena-golyama">249 лв.</p>
+            <p>Лек таблет за филми, четене и учене. Има голям екран и дълго държаща батерия.</p>
+            <ul>
+                <li><b>Екран:</b> 10 инча</li>
+                <li><b>Памет:</b> 32 GB</li>
+                <li><b>Цвят:</b> Графит</li>
+                <li><b>Свързаност:</b> Wi-Fi</li>
+                <li><b>Гаранция:</b> 24 месеца</li>
+            </ul>
+
+            <p><a class="poruchai" href="porachki.html">Поръчай</a></p>
+        </div>
+    </div>
+</div>
+<div class="modal" id="modal-monitor" role="dialog" aria-label="Монитор 27 инча">
+    <a class="fon" href="#galeria" title="Затвори"></a>
+    <a class="strelka levo" href="#modal-tablet" title="Предишен">&#10094;</a>
+    <a class="strelka dyasno" href="#modal-smartfon" title="Следващ">&#10095;</a>
+    <div class="kutiya">
+        <a class="zatvori-link" href="#galeria" title="Затвори">&times;</a>
+        <div class="snimka"><img src="monitor.png" alt="Монитор"></div>
+        <div class="info">
+            <h3>Монитор 27 инча</h3>
+            <p class="cena-golyama">329 лв.</p>
+            <p>Голям монитор с тънки рамки и стабилна стойка. Картината е ясна и с наситени цветове.</p>
+            <ul>
+                <li><b>Диагонал:</b> 27 инча</li>
+                <li><b>Резолюция:</b> Full HD</li>
+                <li><b>Стойка:</b> Стабилна, метална</li>
+                <li><b>Цвят:</b> Сребрист</li>
+                <li><b>Гаранция:</b> 24 месеца</li>
+            </ul>
+
+            <p><a class="poruchai" href="porachki.html">Поръчай</a></p>
+        </div>
+    </div>
 </div>
 
 <footer>
