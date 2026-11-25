@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <title>ТехноСвят ЕООД - Тест</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <svg width="70" height="70" viewBox="0 0 100 100" role="img" aria-label="Лого на ТехноСвят">
+        <circle cx="50" cy="50" r="46" fill="navy"/>
+        <ellipse cx="50" cy="50" rx="46" ry="18" fill="none" stroke="orange" stroke-width="4" transform="rotate(-25 50 50)"/>
+        <rect x="26" y="28" width="48" height="12" fill="white"/>
+        <rect x="44" y="28" width="12" height="44" fill="white"/>
+    </svg>
+    <div>
+        <h1>ТехноСвят ЕООД</h1>
+        <p><i>Технологии за вашия дом и офис</i></p>
+    </div>
+</header>
+
+<nav class="horizontalno">
+    <ul>
+        <li><a href="firma.html">За фирмата</a>
+            <ul>
+                <li><a href="partnori.html">Партньори</a></li>
+                <li><a href="razvitie.html">Развитие</a></li>
+            </ul>
+        </li>
+        <li><a href="produkti.html">Продукти</a></li>
+        <li><a href="porachki.html">Поръчки</a></li>
+        <li><a href="mnenia.html">Мнения</a></li>
+        <li><a href="index.html">Работа</a></li>
+        <li><a href="testove.html">Тест</a></li>
+        <li><a href="#">За собственика</a>
+            <ul>
+                <li><a href="film.html">Филм</a></li>
+                <li><a href="muzika.html">Музика</a></li>
+                <li><a href="klip.html">Клип</a></li>
+            </ul>
+        </li>
+    </ul>
+</nav>
+
+<div class="teloto">
+    <nav class="vertikalno">
+        <h3>Категории</h3>
+        <ul>
+            <li><a href="produkti.html">Всички продукти</a></li>
+            <li><a href="produkti.html#smartfon">Смартфони</a></li>
+            <li><a href="produkti.html#slushalki">Слушалки</a></li>
+            <li><a href="produkti.html#laptop">Лаптопи</a></li>
+            <li><a href="produkti.html#tablet">Таблети</a></li>
+            <li><a href="produkti.html#monitor">Монитори</a></li>
+        </ul>
+    </nav>
+
+<main>
+    <h2>Тест</h2>
+
+    <section class="test">
+        <h3>Задача 1: Подредете етапите</h3>
+        <p>Подредете етапите при създаване на уеб сайт в правилен ред. Влачете ги с мишката или кликнете върху два елемента, за да ги размените.</p>
+
+        <ul id="spisak" class="spisak"></ul>
+
+        <p>
+            <button id="proveri1">Провери</button>
+            <button id="nov1">Размеси отново</button>
+        </p>
+        <div id="saobshtenie1" class="saobshtenie"></div>
+    </section>
+
+    <section class="test">
+        <h3>Задача 2: Намерете фигурата</h3>
+        <p id="vapros" class="vapros"></p>
+
+        <svg id="kartina" viewBox="0 0 400 300" role="img" aria-label="Картина от различни фигури">
+            <!-- небе (фон, не е част от въпроса) -->
+            <rect x="0" y="0" width="400" height="300" fill="#bfe6ff"/>
+
+            <!-- земя -->
+            <rect class="forma" data-ime="правоъгълник" x="0" y="230" width="400" height="70" fill="#7ac36a"/>
+
+            <!-- слънце -->
+            <circle class="forma" data-ime="кръг" cx="345" cy="50" r="32" fill="#ffd400"/>
+
+            <!-- облак -->
+            <ellipse class="forma" data-ime="елипса" cx="115" cy="50" rx="55" ry="22" fill="#ffffff"/>
+
+            <!-- хвърчило -->
+            <polygon class="forma" data-ime="ромб" points="225,25 245,55 225,85 205,55" fill="#e84c8a"/>
+
+            <!-- звезда -->
+            <polygon class="forma" data-ime="звезда" points="55.0,126.0 60.9,141.9 77.8,142.6 64.5,153.1 69.1,169.4 55.0,160.0 40.9,169.4 45.5,153.1 32.2,142.6 49.1,141.9" fill="#ffb347"/>
+
+            <!-- къща -->
+            <rect class="forma" data-ime="правоъгълник" x="120" y="140" width="140" height="90" fill="#e8c9a0"/>
+            <polygon class="forma" data-ime="триъгълник" points="105,140 190,80 275,140" fill="#b5382f"/>
+            <rect class="forma" data-ime="квадрат" x="140" y="165" width="40" height="40" fill="#9fd8ff"/>
+            <rect class="forma" data-ime="правоъгълник" x="205" y="170" width="35" height="60" fill="#8b5a2b"/>
+
+            <!-- дърво -->
+            <rect class="forma" data-ime="правоъгълник" x="310" y="180" width="16" height="50" fill="#6b4423"/>
+            <circle class="forma" data-ime="кръг" cx="318" cy="160" r="34" fill="#2e8b3d"/>
+        </svg>
+
+        <p><button id="nov2">Нов въпрос</button></p>
+        <div id="saobshtenie2" class="saobshtenie"></div>
+    </section>
+
+    <section class="test">
+        <h3>Общ резултат</h3>
+        <div id="obshto"></div>
+    </section>
+
+    <script>
+        /* ============ ОБЩ РЕЗУЛТАТ ============ */
+        var rezultat1 = null;   // null = още не е решена, true = вярна, false = грешна
+        var rezultat2 = null;
+
+        function tekst(r) {
+            if (r === null) { return "още не е решена"; }
+            if (r) { return "✔ вярна"; }
+            return "✘ грешна";
+        }
+
+        function obnoviObshto() {
+            var verni = 0;
+            if (rezultat1 === true) { verni++; }
+            if (rezultat2 === true) { verni++; }
+            document.getElementById("obshto").innerHTML =
+                "Задача 1: " + tekst(rezultat1) + "<br>" +
+                "Задача 2: " + tekst(rezultat2) + "<br>" +
+                "<b>Верни задачи: " + verni + " от 2</b>";
+        }
+
+        /* ============ ЗАДАЧА 1: ПОДРЕЖДАНЕ С ВЛАЧЕНЕ ============ */
+        var pravilenRed = [
+            "Планиране на сайта",
+            "Създаване на дизайн",
+            "Писане на код",
+            "Тестване",
+            "Публикуване в интернет"
+        ];
+
+        var spisak = document.getElementById("spisak");
+        var vlacheno = null;   // елементът, който се влачи в момента
+        var izbrano = null;    // елементът, избран с клик (за телефон)
+
+        // разбърква масив (алгоритъм на Фишер-Йейтс)
+        function razmesi(masiv) {
+            for (var i = masiv.length - 1; i > 0; i--) {
+                var j = Math.floor(Math.random() * (i + 1));
+                var vremenno = masiv[i];
+                masiv[i] = masiv[j];
+                masiv[j] = vremenno;
+            }
+            return masiv;
+        }
+
+        // маха оцветяването и съобщението, когато нещо се премести
+        function izchisti1() {
+            for (var i = 0; i < spisak.children.length; i++) {
+                spisak.children[i].classList.remove("verno", "greshno");
+            }
+            var kutiya = document.getElementById("saobshtenie1");
+            kutiya.className = "saobshtenie";
+            kutiya.textContent = "";
+            rezultat1 = null;
+            obnoviObshto();
+        }
+
+        function napraviElement(tekstaNaElementa) {
+            var li = document.createElement("li");
+            li.className = "duma";
+            li.textContent = tekstaNaElementa;
+            li.draggable = true;
+
+            // започва влаченето
+            li.addEventListener("dragstart", function (e) {
+                vlacheno = this;
+                this.classList.add("vlache");
+                e.dataTransfer.setData("text/plain", this.textContent);
+            });
+
+            // влаченият елемент минава над този
+            li.addEventListener("dragover", function (e) {
+                e.preventDefault();
+                this.classList.add("nad");
+            });
+
+            li.addEventListener("dragleave", function () {
+                this.classList.remove("nad");
+            });
+
+            // пускане: вмъква влачения елемент преди или след този
+            li.addEventListener("drop", function (e) {
+                e.preventDefault();
+                this.classList.remove("nad");
+                if (vlacheno !== null && vlacheno !== this) {
+                    var elementi = Array.from(spisak.children);
+                    if (elementi.indexOf(vlacheno) < elementi.indexOf(this)) {
+                        this.after(vlacheno);
+                    } else {
+                        this.before(vlacheno);
+                    }
+                    izchisti1();
+                }
+            });
+
+            li.addEventListener("dragend", function () {
+                this.classList.remove("vlache");
+                vlacheno = null;
+            });
+
+            // клик: първият клик избира, вторият разменя двата елемента
+            li.addEventListener("click", function () {
+                if (izbrano === null) {
+                    izbrano = this;
+                    this.classList.add("izbrano");
+                } else if (izbrano === this) {
+                    this.classList.remove("izbrano");
+                    izbrano = null;
+                } else {
+                    var vremenen = document.createElement("li");
+                    spisak.insertBefore(vremenen, izbrano);
+                    spisak.insertBefore(izbrano, this);
+                    spisak.insertBefore(this, vremenen);
+                    spisak.removeChild(vremenen);
+                    izbrano.classList.remove("izbrano");
+                    izbrano = null;
+                    izchisti1();
+                }
+            });
+
+            return li;
+        }
+
+        function nova1() {
+            var dumi;
+            do {
+                dumi = razmesi(pravilenRed.slice());
+            } while (dumi.join() === pravilenRed.join());   // да не излезе вече подредено
+
+            spisak.innerHTML = "";
+            for (var i = 0; i < dumi.length; i++) {
+                spisak.appendChild(napraviElement(dumi[i]));
+            }
+            izbrano = null;
+            izchisti1();
+        }
+
+        // оценяване: зелено = на правилното място, червено = не е на мястото си
+        function proveri1() {
+            var verni = 0;
+            var greshniMesta = [];
+
+            for (var i = 0; i < spisak.children.length; i++) {
+                var el = spisak.children[i];
+                el.classList.remove("verno", "greshno");
+                if (el.textContent === pravilenRed[i]) {
+                    el.classList.add("verno");
+                    verni++;
+                } else {
+                    el.classList.add("greshno");
+                    greshniMesta.push(i + 1);
+                }
+            }
+
+            var kutiya = document.getElementById("saobshtenie1");
+            if (verni === pravilenRed.length) {
+                kutiya.className = "saobshtenie ok";
+                kutiya.textContent = "✔ Вярно! Всичките " + verni + " етапа са подредени правилно.";
+                rezultat1 = true;
+            } else {
+                kutiya.className = "saobshtenie ne";
+                kutiya.textContent = "✘ Грешно. На правилното място са " + verni + " от " +
+                    pravilenRed.length + " етапа. Неправилни позиции: " + greshniMesta.join(", ") + ".";
+                rezultat1 = false;
+            }
+            obnoviObshto();
+        }
+
+        document.getElementById("proveri1").addEventListener("click", proveri1);
+        document.getElementById("nov1").addEventListener("click", nova1);
+
+        /* ============ ЗАДАЧА 2: НАМЕРИ ФИГУРАТА ============ */
+        var imena = ["кръг", "елипса", "правоъгълник", "квадрат", "триъгълник", "звезда", "ромб"];
+        var formi = document.querySelectorAll("#kartina .forma");
+        var celta = "";
+        var predishna = "";
+        var otgovoreno = false;
+
+        function noviVapros() {
+            for (var i = 0; i < formi.length; i++) {
+                formi[i].classList.remove("verno", "greshno", "pokaji");
+            }
+            do {
+                celta = imena[Math.floor(Math.random() * imena.length)];
+            } while (celta === predishna);
+            predishna = celta;
+
+            otgovoreno = false;
+            rezultat2 = null;
+            document.getElementById("vapros").innerHTML =
+                "Намерете и кликнете върху фигура от вида: <b>" + celta + "</b>.";
+            var kutiya = document.getElementById("saobshtenie2");
+            kutiya.className = "saobshtenie";
+            kutiya.textContent = "";
+            obnoviObshto();
+        }
+
+        function klikNaForma() {
+            if (otgovoreno) { return; }      // един отговор на въпрос
+            otgovoreno = true;
+
+            var ime = this.getAttribute("data-ime");
+            var kutiya = document.getElementById("saobshtenie2");
+
+            if (ime === celta) {
+                this.classList.add("verno");
+                kutiya.className = "saobshtenie ok";
+                kutiya.textContent = "✔ Вярно! Кликнахте върху фигура от вида „" + ime + "“.";
+                rezultat2 = true;
+            } else {
+                this.classList.add("greshno");
+                for (var i = 0; i < formi.length; i++) {
+                    if (formi[i].getAttribute("data-ime") === celta) {
+                        formi[i].classList.add("pokaji");
+                    }
+                }
+                kutiya.className = "saobshtenie ne";
+                kutiya.textContent = "✘ Грешно. Кликнахте върху „" + ime + "“, а се търсеше „" + celta +
+                    "“. Правилните фигури са очертани със зелена пунктирана линия.";
+                rezultat2 = false;
+            }
+            obnoviObshto();
+        }
+
+        for (var k = 0; k < formi.length; k++) {
+            formi[k].addEventListener("click", klikNaForma);
+        }
+        document.getElementById("nov2").addEventListener("click", noviVapros);
+
+        /* ============ СТАРТ ============ */
+        nova1();
+        noviVapros();
+    </script>
+</main>
+
+<aside class="novini">
+    <h3>Новини</h3>
+    <article><h4><time datetime="2026-10-20">20.10.2026</time></h4><p>Нови смартфони на склад!</p></article>
+    <article><h4><time datetime="2026-10-15">15.10.2026</time></h4><p>Отстъпка 10% за есенните поръчки.</p></article>
+    <article><h4><time datetime="2026-10-01">01.10.2026</time></h4><p>Отваряме нов магазин във Варна.</p></article>
+</aside>
+</div>
+
+<footer>
+    <p>&copy; 2026 ТехноСвят ЕООД. Всички права запазени.</p>
+</footer>
+
+</body>
+</html>

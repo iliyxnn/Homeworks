@@ -520,3 +520,56 @@ canvas, video, iframe { max-width: 100%; border: 2px solid navy; border-radius: 
 .modal .strelka:hover { background-color: rgba(255, 140, 0, 0.8); }
 .modal .levo { left: 15px; }
 .modal .dyasno { right: 15px; }
+
+/* ================= ЗАДАНИЕ 7: ТЕСТ ================= */
+.test {
+    margin-bottom: 25px;
+    padding: 5px 20px 15px 20px;
+    background-color: #f5f9ff;
+    border: 2px solid navy;
+    border-radius: 10px;
+}
+
+/* ---------- Задача 1: подреждане ---------- */
+.spisak { list-style: none; padding: 0; margin: 10px 0; }
+
+.spisak li.duma {
+    margin: 8px 0;
+    padding: 10px 15px;
+    background-color: white;
+    border: 2px solid navy;
+    border-radius: 8px;
+    cursor: grab;
+    user-select: none;
+}
+
+.spisak li.duma:hover { background-color: #fffbcc; }
+.spisak li.vlache { opacity: 0.4; }
+.spisak li.nad { border-style: dashed; border-color: darkorange; }
+.spisak li.izbrano { outline: 3px solid darkorange; }
+
+.spisak li.verno { background-color: #c8f0c8; border-color: green; color: darkgreen; }
+.spisak li.greshno { background-color: #ffd1d1; border-color: crimson; color: #8b0000; }
+
+/* ---------- Задача 2: картина с фигури ---------- */
+.vapros { font-size: 17px; }
+
+#kartina {
+    display: block;
+    width: 100%;
+    max-width: 520px;
+    border: 2px solid navy;
+    border-radius: 8px;
+}
+
+#kartina .forma { cursor: pointer; stroke: #333333; stroke-width: 1.5; }
+#kartina .forma:hover { opacity: 0.75; }
+
+#kartina .forma.verno { fill: #2ecc40; stroke: darkgreen; stroke-width: 4; }
+#kartina .forma.greshno { fill: #ff4136; stroke: #8b0000; stroke-width: 4; }
+#kartina .forma.pokaji { stroke: darkgreen; stroke-width: 4; stroke-dasharray: 6 3; }
+
+/* ---------- Съобщения за верността ---------- */
+.saobshtenie { margin-top: 10px; border-radius: 6px; font-weight: bold; }
+.saobshtenie.ok { padding: 10px; background-color: #c8f0c8; color: darkgreen; border: 2px solid green; }
+.saobshtenie.ne { padding: 10px; background-color: #ffd1d1; color: #8b0000; border: 2px solid crimson; }
